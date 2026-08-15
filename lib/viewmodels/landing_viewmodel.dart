@@ -1,7 +1,7 @@
-import 'package:flutter/foundation.dart';
+import "package:flutter/foundation.dart";
 
-import '../models/project_category_count.dart';
-import '../services/project_service.dart';
+import "../models/project_category_count.dart";
+import "../services/project_service.dart";
 
 class LandingViewModel extends ChangeNotifier {
   final ProjectService _projectService;

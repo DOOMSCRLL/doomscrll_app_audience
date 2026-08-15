@@ -1,5 +1,6 @@
-import 'package:flutter/material.dart';
-import '../app_colors.dart';
+import "package:flutter/material.dart";
+
+import "../app_colors.dart";
 
 abstract final class DoomscrllInputTheme {
   static InputDecorationTheme get darkInputDecorationTheme {
@@ -10,14 +11,14 @@ abstract final class DoomscrllInputTheme {
       fillColor: AppColors.darkness,
       contentPadding: const EdgeInsets.symmetric(horizontal: 24, vertical: 12),
       hintStyle: const TextStyle(
-        fontFamily: 'Playfair',
+        fontFamily: "Playfair",
         fontWeight: FontWeight.w500,
         fontStyle: FontStyle.italic,
         fontSize: 20,
         color: Colors.grey,
       ),
       labelStyle: const TextStyle(
-        fontFamily: 'Playfair',
+        fontFamily: "Playfair",
         fontWeight: FontWeight.w500,
         fontSize: 20,
         color: AppColors.lagoon,

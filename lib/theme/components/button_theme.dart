@@ -1,9 +1,10 @@
-import 'package:flutter/material.dart';
-import '../app_colors.dart';
+import "package:flutter/material.dart";
+
+import "../app_colors.dart";
 
 abstract final class DoomscrllButtonTheme {
   static const TextStyle _buttonTextStyle = TextStyle(
-    fontFamily: 'SpaceMono',
+    fontFamily: "SpaceMono",
     fontWeight: FontWeight.w700,
     letterSpacing: 1.2,
   );
@@ -21,7 +22,7 @@ abstract final class DoomscrllButtonTheme {
         ),
         backgroundColor: WidgetStateProperty.resolveWith((states) {
           if (states.contains(WidgetState.disabled)) {
-            return AppColors.lagoon.withOpacity(0.2);
+            return AppColors.lagoon.withValues(alpha: 0.2);
           }
           if (states.contains(WidgetState.pressed)) {
             return AppColors.bloodmoon;
@@ -30,7 +31,7 @@ abstract final class DoomscrllButtonTheme {
         }),
         foregroundColor: WidgetStateProperty.resolveWith((states) {
           if (states.contains(WidgetState.disabled)) {
-            return AppColors.darkness.withOpacity(0.5);
+            return AppColors.darkness.withValues(alpha: 0.5);
           }
           return AppColors.darkness;
         }),
@@ -57,7 +58,7 @@ abstract final class DoomscrllButtonTheme {
         }),
         foregroundColor: WidgetStateProperty.resolveWith((states) {
           if (states.contains(WidgetState.disabled)) {
-            return AppColors.lagoon.withOpacity(0.2);
+            return AppColors.lagoon.withValues(alpha: 0.2);
           }
           if (states.contains(WidgetState.pressed)) {
             return AppColors.darkness;
@@ -66,7 +67,7 @@ abstract final class DoomscrllButtonTheme {
         }),
         side: WidgetStateProperty.resolveWith((states) {
           if (states.contains(WidgetState.disabled)) {
-            return BorderSide(color: AppColors.lagoon.withOpacity(0.2), width: 3);
+            return BorderSide(color: AppColors.lagoon.withValues(alpha: 0.2), width: 3);
           }
           if (states.contains(WidgetState.pressed)) {
             return const BorderSide(color: AppColors.bloodmoon, width: 3);
@@ -96,7 +97,7 @@ abstract final class DoomscrllButtonTheme {
         }),
         foregroundColor: WidgetStateProperty.resolveWith((states) {
           if (states.contains(WidgetState.disabled)) {
-            return AppColors.lagoon.withOpacity(0.2);
+            return AppColors.lagoon.withValues(alpha: 0.2);
           }
           if (states.contains(WidgetState.pressed)) {
             return AppColors.darkness;

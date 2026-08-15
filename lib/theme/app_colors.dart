@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+import "package:flutter/material.dart";
 
 abstract final class AppColors {
   static const Color darkness = Color(0xFF121212);

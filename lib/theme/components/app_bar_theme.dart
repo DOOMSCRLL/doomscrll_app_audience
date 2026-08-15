@@ -1,6 +1,7 @@
-import 'package:flutter/material.dart';
-import '../app_colors.dart';
-import '../app_typography.dart';
+import "package:flutter/material.dart";
+
+import "../app_colors.dart";
+import "../app_typography.dart";
 
 abstract final class DoomscrllAppBarTheme {
   static AppBarTheme get darkAppBarTheme {
