@@ -1,8 +1,14 @@
-import 'dart:convert';
-import 'package:http/http.dart' as http;
+import "dart:convert";
+
+import "package:flutter/foundation.dart";
+import "package:http/http.dart" as http;
 
 class ApiService {
-  static const String defaultBaseUrl = 'https://api.doomscrll.com';
+  static const String _productionBaseUrl = "https://api.doomscrll.com";
+  static const String _localBaseUrl = "http://127.0.0.1:3000";
+
+  static String get defaultBaseUrl =>
+      kDebugMode ? _localBaseUrl : _productionBaseUrl;
 
   final String baseUrl;
   final http.Client _client;
@@ -14,15 +20,15 @@ class ApiService {
         _client = client ?? http.Client();
 
   Map<String, String> get defaultHeaders => {
-        'Content-Type': 'application/json',
-        'Accept': 'application/json',
+        "Content-Type": "application/json",
+        "Accept": "application/json",
       };
 
   Future<Map<String, dynamic>> get(
     String endpoint, {
     Map<String, String>? headers,
   }) async {
-    final uri = Uri.parse('$baseUrl$endpoint');
+    final uri = Uri.parse("$baseUrl$endpoint");
     final mergedHeaders = {...defaultHeaders, ...?headers};
 
     final response = await _client.get(uri, headers: mergedHeaders);
@@ -31,12 +37,12 @@ class ApiService {
 
   Map<String, dynamic> _processResponse(http.Response response) {
     if (response.statusCode < 200 || response.statusCode >= 300) {
-      throw Exception('HTTP error ${response.statusCode}: ${response.body}');
+      throw Exception("HTTP error ${response.statusCode}: ${response.body}");
     }
 
     final body = jsonDecode(response.body) as Map<String, dynamic>;
-    if (body['success'] != true) {
-      throw Exception(body['error']?['message'] ?? 'API request failed');
+    if (body["success"] != true) {
+      throw Exception(body["error"]?["message"] ?? "API request failed");
     }
 
     return body;
