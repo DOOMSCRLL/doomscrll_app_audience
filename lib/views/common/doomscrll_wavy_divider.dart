@@ -8,9 +8,9 @@ class DoomscrllWavyDivider extends StatelessWidget {
 
   const DoomscrllWavyDivider({
     super.key,
-    this.height = 16.0,
-    this.waveWidth = 16.0,
-    this.strokeWidth = 3.0,
+    this.height = 12.0,
+    this.waveWidth = 14.0,
+    this.strokeWidth = 4.0,
     this.color,
   });
 
