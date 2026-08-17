@@ -15,7 +15,7 @@ class CategoryAnchor extends StatelessWidget {
     final theme = Theme.of(context);
     return TextButton.icon(
       onPressed: onPressed,
-      label: Text("$label ($count)".upper, style: theme.textTheme.labelLarge?.copyWith(color: AppColors.lagoon)),
+      label: Text("$label ($count)".upper, style: theme.textTheme.labelLarge),
       icon: const DoomscrllIcon(DoomscrllIconName.arrowForward, size: 16, color: AppColors.lagoon),
       iconAlignment: IconAlignment.end,
     );

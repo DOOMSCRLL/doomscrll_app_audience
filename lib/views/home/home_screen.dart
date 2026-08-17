@@ -1,5 +1,4 @@
 import "package:doomscrll_app_audience/l10n/dict_extension.dart";
-import "package:doomscrll_app_audience/theme/app_colors.dart";
 import "package:doomscrll_app_audience/viewmodels/landing_viewmodel.dart";
 import "package:doomscrll_app_audience/views/common/doomscrll_refresh_indicator.dart";
 import "package:doomscrll_app_audience/views/common/doomscrll_spinner.dart";
@@ -33,12 +32,7 @@ class _HomeScreenState extends State<HomeScreen> {
 
   Widget getBody(BuildContext context) => switch ((_viewModel.isLoading, _viewModel.categories.isEmpty)) {
     (true, true) => DoomscrllSpinner(label: context.dict.landingTextLoading, hasBlendMode: true, doFillParent: true),
-    (false, true) => Center(
-      child: Text(
-        context.dict.landingTextNoData,
-        style: Theme.of(context).textTheme.bodyLarge?.copyWith(color: AppColors.lagoon),
-      ),
-    ),
+    (false, true) => Center(child: Text(context.dict.landingTextNoData, style: Theme.of(context).textTheme.bodyLarge)),
     _ => LayoutBuilder(
       builder: (context, constraints) {
         return SingleChildScrollView(
@@ -54,7 +48,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   Center(
                     child: Text(
                       context.dict.landingTextCopy,
-                      style: Theme.of(context).textTheme.bodyLarge?.copyWith(color: AppColors.lagoon),
+                      style: Theme.of(context).textTheme.bodyLarge,
                       textAlign: TextAlign.center,
                     ),
                   ),
