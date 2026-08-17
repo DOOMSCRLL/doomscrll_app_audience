@@ -1,7 +1,6 @@
 {
   "@@locale": "tr",
-
   "appTitle": "DOOMSCRLL",
-  "landingTitle": "Kategorileri Keşfet",
-  "projectCount": "{count} Proje"
+  "landingTextLoading": "Bugünün projeleri yükleniyor...",
+  "landingTextNoData": "Bugün için hiçbir proje yok!\nLütfen yarın tekrar gözat~"
 }

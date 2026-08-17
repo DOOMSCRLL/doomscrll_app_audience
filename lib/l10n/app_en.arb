@@ -1,24 +1,9 @@
 {
   "@@locale": "en",
-
   "appTitle": "DOOMSCRLL",
   "@appTitle": {
     "description": "The main title of the application"
   },
-
-  "landingTitle": "Explore Categories",
-  "@landingTitle": {
-    "description": "Header title on the landing page"
-  },
-
-  "projectCount": "{count} Projects",
-  "@projectCount": {
-    "description": "Project count display with a parameter",
-    "placeholders": {
-      "count": {
-        "type": "int",
-        "example": "12"
-      }
-    }
-  }
+  "landingTextLoading": "Loading today's projects...",
+  "landingTextNoData": "There seems to be no projects for today!\nPlease check again tomorrow~"
 }
