@@ -29,4 +29,40 @@ class AppLocalizationsTr extends AppLocalizations {
 
   @override
   String get contextMenuLabelLegal => 'Yasal';
+
+  @override
+  String get categoryLabelVideoGames => 'Oyunlar';
+
+  @override
+  String get categoryLabelTabletop => 'Kutu Oyunları';
+
+  @override
+  String get categoryLabelSoftwareTools => 'Yazılım ve Araçlar';
+
+  @override
+  String get categoryLabelDigitalAssets => 'Eklenti ve Bileşenler';
+
+  @override
+  String get categoryLabelPublishing => 'Yayımlar';
+
+  @override
+  String get categoryLabelAudio => 'Ses ve Müzik';
+
+  @override
+  String get categoryLabelVideo => 'Film ve Video';
+
+  @override
+  String get categoryLabelGoods => 'Fiziksel Ürünler';
+
+  @override
+  String get categoryLabelFood => 'Yiyecek ve İçecek';
+
+  @override
+  String get categoryLabelLocal => 'Yerel İşletmeler';
+
+  @override
+  String get categoryLabelInternalSocials => 'Sosyal Platformlar';
+
+  @override
+  String get categoryLabelInternalCrowdfunding => 'Kitle Fonlama Platformları';
 }

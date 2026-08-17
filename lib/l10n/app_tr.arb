@@ -6,5 +6,17 @@
   "landingTextCopy": "Bugün neyi keşfedelim?",
   "contextMenuLabelContactUs": "Bize ulaşın",
   "contextMenuLabelHelp": "Yardım",
-  "contextMenuLabelLegal": "Yasal"
+  "contextMenuLabelLegal": "Yasal",
+  "categoryLabelVideoGames": "Oyunlar",
+  "categoryLabelTabletop": "Kutu Oyunları",
+  "categoryLabelSoftwareTools": "Yazılım ve Araçlar",
+  "categoryLabelDigitalAssets": "Eklenti ve Bileşenler",
+  "categoryLabelPublishing": "Yayımlar",
+  "categoryLabelAudio": "Ses ve Müzik",
+  "categoryLabelVideo": "Film ve Video",
+  "categoryLabelGoods": "Fiziksel Ürünler",
+  "categoryLabelFood": "Yiyecek ve İçecek",
+  "categoryLabelLocal": "Yerel İşletmeler",
+  "categoryLabelInternalSocials": "Sosyal Platformlar",
+  "categoryLabelInternalCrowdfunding": "Kitle Fonlama Platformları"
 }

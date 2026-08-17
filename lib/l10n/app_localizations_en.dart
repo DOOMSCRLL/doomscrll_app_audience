@@ -29,4 +29,40 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get contextMenuLabelLegal => 'Legal';
+
+  @override
+  String get categoryLabelVideoGames => 'Video Games';
+
+  @override
+  String get categoryLabelTabletop => 'Tabletop Games';
+
+  @override
+  String get categoryLabelSoftwareTools => 'Software & Tools';
+
+  @override
+  String get categoryLabelDigitalAssets => 'Digital Assets';
+
+  @override
+  String get categoryLabelPublishing => 'Publishing';
+
+  @override
+  String get categoryLabelAudio => 'Audio';
+
+  @override
+  String get categoryLabelVideo => 'Video';
+
+  @override
+  String get categoryLabelGoods => 'Physical Goods';
+
+  @override
+  String get categoryLabelFood => 'Foods';
+
+  @override
+  String get categoryLabelLocal => 'Local Businesses';
+
+  @override
+  String get categoryLabelInternalSocials => 'Social Platforms';
+
+  @override
+  String get categoryLabelInternalCrowdfunding => 'Crowdfunding Platforms';
 }

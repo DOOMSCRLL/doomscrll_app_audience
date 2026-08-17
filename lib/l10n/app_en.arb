@@ -6,5 +6,17 @@
   "landingTextCopy": "What are you looking for today?",
   "contextMenuLabelContactUs": "Contact us",
   "contextMenuLabelHelp": "Help",
-  "contextMenuLabelLegal": "Legal"
+  "contextMenuLabelLegal": "Legal",
+  "categoryLabelVideoGames": "Video Games",
+  "categoryLabelTabletop": "Tabletop Games",
+  "categoryLabelSoftwareTools": "Software & Tools",
+  "categoryLabelDigitalAssets": "Digital Assets",
+  "categoryLabelPublishing": "Publishing",
+  "categoryLabelAudio": "Audio",
+  "categoryLabelVideo": "Video",
+  "categoryLabelGoods": "Physical Goods",
+  "categoryLabelFood": "Foods",
+  "categoryLabelLocal": "Local Businesses",
+  "categoryLabelInternalSocials": "Social Platforms",
+  "categoryLabelInternalCrowdfunding": "Crowdfunding Platforms"
 }

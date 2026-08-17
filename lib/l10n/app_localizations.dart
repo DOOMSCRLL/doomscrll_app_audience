@@ -133,6 +133,78 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Legal'**
   String get contextMenuLabelLegal;
+
+  /// No description provided for @categoryLabelVideoGames.
+  ///
+  /// In en, this message translates to:
+  /// **'Video Games'**
+  String get categoryLabelVideoGames;
+
+  /// No description provided for @categoryLabelTabletop.
+  ///
+  /// In en, this message translates to:
+  /// **'Tabletop Games'**
+  String get categoryLabelTabletop;
+
+  /// No description provided for @categoryLabelSoftwareTools.
+  ///
+  /// In en, this message translates to:
+  /// **'Software & Tools'**
+  String get categoryLabelSoftwareTools;
+
+  /// No description provided for @categoryLabelDigitalAssets.
+  ///
+  /// In en, this message translates to:
+  /// **'Digital Assets'**
+  String get categoryLabelDigitalAssets;
+
+  /// No description provided for @categoryLabelPublishing.
+  ///
+  /// In en, this message translates to:
+  /// **'Publishing'**
+  String get categoryLabelPublishing;
+
+  /// No description provided for @categoryLabelAudio.
+  ///
+  /// In en, this message translates to:
+  /// **'Audio'**
+  String get categoryLabelAudio;
+
+  /// No description provided for @categoryLabelVideo.
+  ///
+  /// In en, this message translates to:
+  /// **'Video'**
+  String get categoryLabelVideo;
+
+  /// No description provided for @categoryLabelGoods.
+  ///
+  /// In en, this message translates to:
+  /// **'Physical Goods'**
+  String get categoryLabelGoods;
+
+  /// No description provided for @categoryLabelFood.
+  ///
+  /// In en, this message translates to:
+  /// **'Foods'**
+  String get categoryLabelFood;
+
+  /// No description provided for @categoryLabelLocal.
+  ///
+  /// In en, this message translates to:
+  /// **'Local Businesses'**
+  String get categoryLabelLocal;
+
+  /// No description provided for @categoryLabelInternalSocials.
+  ///
+  /// In en, this message translates to:
+  /// **'Social Platforms'**
+  String get categoryLabelInternalSocials;
+
+  /// No description provided for @categoryLabelInternalCrowdfunding.
+  ///
+  /// In en, this message translates to:
+  /// **'Crowdfunding Platforms'**
+  String get categoryLabelInternalCrowdfunding;
 }
 
 class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {
