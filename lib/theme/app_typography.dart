@@ -56,6 +56,21 @@ abstract final class AppTypography {
         fontStyle: FontStyle.italic,
         fontVariations: const [playfairOpszBody, playfairWeightMedium],
       ),
+      labelLarge: base.labelLarge?.copyWith(
+        fontFamily: "SpaceMono",
+        fontWeight: FontWeight.w700,
+        letterSpacing: 1.2,
+      ),
+      labelMedium: base.labelMedium?.copyWith(
+        fontFamily: "SpaceMono",
+        fontWeight: FontWeight.w700,
+        letterSpacing: 1.2,
+      ),
+      labelSmall: base.labelSmall?.copyWith(
+        fontFamily: "SpaceMono",
+        fontWeight: FontWeight.w700,
+        letterSpacing: 1.2,
+      ),
     );
   }
 }
