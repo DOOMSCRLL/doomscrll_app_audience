@@ -19,13 +19,9 @@ class ProjectPreview {
 
   factory ProjectPreview.fromMap(Map<String, dynamic> map) {
     final creatorObj = map["creator"] as Map<String, dynamic>?;
-    final authorUsername = creatorObj?["username"] as String? ??
-        map["authorUsername"] as String? ??
-        "";
+    final authorUsername = creatorObj?["username"] as String? ?? map["authorUsername"] as String? ?? "";
     final rawTags = map["tags"] as List<dynamic>?;
-    final parsedTags = rawTags != null
-        ? rawTags.map((e) => e.toString()).toList()
-        : <String>[];
+    final parsedTags = rawTags != null ? rawTags.map((e) => e.toString()).toList() : <String>[];
 
     return ProjectPreview(
       referenceId: map["referenceId"] as String? ?? "",
@@ -33,7 +29,7 @@ class ProjectPreview {
       authorUsername: authorUsername,
       category: map["category"] as String? ?? "",
       tags: parsedTags,
-      coverImagePath: resolveCDNImagePath(map["coverImagePath"] as String?),
+      coverImagePath: resolveCdnImagePath(map["coverImagePath"] as String?),
     );
   }
 }

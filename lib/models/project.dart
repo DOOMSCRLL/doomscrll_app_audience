@@ -37,28 +37,16 @@ class Project {
 
   factory Project.fromMap(Map<String, dynamic> map) {
     final rawTags = map["tags"] as List<dynamic>?;
-    final parsedTags = rawTags != null
-        ? rawTags.map((e) => e.toString()).toList()
-        : <String>[];
+    final parsedTags = rawTags != null ? rawTags.map((e) => e.toString()).toList() : <String>[];
 
     final rawFeatures = map["features"] as List<dynamic>?;
-    final parsedFeatures = rawFeatures != null
-        ? rawFeatures.map((e) => e.toString()).toList()
-        : <String>[];
+    final parsedFeatures = rawFeatures != null ? rawFeatures.map((e) => e.toString()).toList() : <String>[];
 
     final rawScreenshots = map["screenshotPaths"] as List<dynamic>?;
-    final parsedScreenshots = rawScreenshots != null
-        ? rawScreenshots
-            .map((e) => resolveCDNImagePath(e.toString())!)
-            .toList()
-        : null;
+    final parsedScreenshots = rawScreenshots?.map((e) => resolveCdnImagePath(e.toString())!).toList();
 
     final rawSecondary = map["secondaryPlatforms"] as List<dynamic>?;
-    final parsedSecondary = rawSecondary != null
-        ? rawSecondary
-            .map((e) => PlatformRecord.fromMap(e as Map<String, dynamic>))
-            .toList()
-        : null;
+    final parsedSecondary = rawSecondary?.map((e) => PlatformRecord.fromMap(e as Map<String, dynamic>)).toList();
 
     final creatorObj = map["creator"] as Map<String, dynamic>? ?? {};
 
@@ -71,7 +59,7 @@ class Project {
       description: map["description"] as String?,
       tags: parsedTags,
       features: parsedFeatures,
-      coverImagePath: resolveCDNImagePath(map["coverImagePath"] as String?),
+      coverImagePath: resolveCdnImagePath(map["coverImagePath"] as String?),
       screenshotPaths: parsedScreenshots,
       secondaryPlatforms: parsedSecondary,
       videoUrl: map["videoUrl"] as String?,
