@@ -3,6 +3,7 @@ import "package:doomscrll_app_audience/theme/app_colors.dart";
 import "package:doomscrll_app_audience/viewmodels/landing_viewmodel.dart";
 import "package:doomscrll_app_audience/views/common/doomscrll_refresh_indicator.dart";
 import "package:doomscrll_app_audience/views/common/doomscrll_spinner.dart";
+import "package:doomscrll_app_audience/views/home/widgets/category_anchor.dart";
 import "package:doomscrll_app_audience/views/home/widgets/logo_bottom_navbar.dart";
 import "package:doomscrll_app_audience/views/home/widgets/wordmark_appbar.dart";
 import "package:flutter/material.dart";
@@ -38,10 +39,38 @@ class _HomeScreenState extends State<HomeScreen> {
         style: Theme.of(context).textTheme.bodyLarge?.copyWith(color: AppColors.lagoon),
       ),
     ),
-    _ => const SingleChildScrollView(
-      physics: AlwaysScrollableScrollPhysics(),
-      padding: EdgeInsets.symmetric(horizontal: 20.0, vertical: 24.0),
-      child: SizedBox(width: 720, height: 1080),
+    _ => LayoutBuilder(
+      builder: (context, constraints) {
+        return SingleChildScrollView(
+          physics: const AlwaysScrollableScrollPhysics(),
+          child: ConstrainedBox(
+            constraints: BoxConstraints(minWidth: constraints.maxWidth, minHeight: constraints.maxHeight),
+            child: Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 24.0),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  Center(
+                    child: Text(
+                      context.dict.landingTextCopy,
+                      style: Theme.of(context).textTheme.bodyLarge?.copyWith(color: AppColors.lagoon),
+                      textAlign: TextAlign.center,
+                    ),
+                  ),
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    spacing: 16,
+                    children: _viewModel.categories
+                        .map<Widget>((c) => CategoryAnchor(label: c.category, count: c.count, onPressed: () => {}))
+                        .toList(growable: false),
+                  ),
+                ],
+              ),
+            ),
+          ),
+        );
+      },
     ),
   };
 
