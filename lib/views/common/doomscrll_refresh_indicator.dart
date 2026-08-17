@@ -102,7 +102,7 @@ class _DoomscrllRefreshIndicatorState extends State<DoomscrllRefreshIndicator> {
                 child: Opacity(
                   opacity: progress,
                   child: Container(
-                    padding: const EdgeInsets.all(8.0),
+                    padding: const EdgeInsets.all(12.0),
                     decoration: BoxDecoration(
                       color: AppColors.darkness,
                       shape: BoxShape.circle,
@@ -114,7 +114,7 @@ class _DoomscrllRefreshIndicatorState extends State<DoomscrllRefreshIndicator> {
                         ),
                       ],
                     ),
-                    child: const DoomscrllSpinner(size: 24.0),
+                    child: const DoomscrllSpinner(size: 36.0),
                   ),
                 ),
               ),
