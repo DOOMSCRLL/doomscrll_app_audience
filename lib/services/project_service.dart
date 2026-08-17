@@ -1,5 +1,5 @@
-import "../models/project_category_count.dart";
-import "api_service.dart";
+import "package:doomscrll_app_audience/models/project_category_count.dart";
+import "package:doomscrll_app_audience/services/api_service.dart";
 
 class ProjectService {
   final ApiService _apiService;

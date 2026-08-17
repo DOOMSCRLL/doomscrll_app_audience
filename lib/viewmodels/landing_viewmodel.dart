@@ -1,7 +1,6 @@
+import "package:doomscrll_app_audience/models/project_category_count.dart";
+import "package:doomscrll_app_audience/services/project_service.dart";
 import "package:flutter/foundation.dart";
-
-import "../models/project_category_count.dart";
-import "../services/project_service.dart";
 
 class LandingViewModel extends ChangeNotifier {
   final ProjectService _projectService;
@@ -11,7 +10,7 @@ class LandingViewModel extends ChangeNotifier {
   String? _errorMessage;
 
   LandingViewModel({ProjectService? projectService})
-      : _projectService = projectService ?? ProjectService();
+    : _projectService = projectService ?? ProjectService();
 
   List<ProjectCategoryCount> get categories => List.unmodifiable(_categories);
   bool get isLoading => _isLoading;
@@ -26,7 +25,9 @@ class LandingViewModel extends ChangeNotifier {
     notifyListeners();
 
     try {
-      _categories = await _projectService.getCategoryCounts(date: DateTime.now());
+      _categories = await _projectService.getCategoryCounts(
+        date: DateTime.now(),
+      );
     } catch (e) {
       _errorMessage = e.toString();
     } finally {

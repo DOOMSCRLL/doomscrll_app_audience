@@ -1,6 +1,6 @@
 import "package:flutter/material.dart";
 
-import "../app_colors.dart";
+import "package:doomscrll_app_audience/theme/app_colors.dart";
 
 abstract final class DoomscrllButtonTheme {
   static const TextStyle _buttonTextStyle = TextStyle(

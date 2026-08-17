@@ -1,10 +1,10 @@
 import "package:flutter/material.dart";
 
-import "app_colors.dart";
-import "app_typography.dart";
-import "components/app_bar_theme.dart";
-import "components/button_theme.dart";
-import "components/input_theme.dart";
+import "package:doomscrll_app_audience/theme/app_colors.dart";
+import "package:doomscrll_app_audience/theme/app_typography.dart";
+import "package:doomscrll_app_audience/theme/components/app_bar_theme.dart";
+import "package:doomscrll_app_audience/theme/components/button_theme.dart";
+import "package:doomscrll_app_audience/theme/components/input_theme.dart";
 
 abstract final class AppTheme {
   static ThemeData get darkTheme {
