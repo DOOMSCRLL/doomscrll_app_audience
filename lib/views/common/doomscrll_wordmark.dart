@@ -10,7 +10,7 @@ class DoomscrllWordmark extends StatelessWidget {
   const DoomscrllWordmark({
     super.key,
     this.height,
-    this.width = double.infinity,
+    this.width,
     this.color,
     this.fit = BoxFit.fitWidth,
   });
