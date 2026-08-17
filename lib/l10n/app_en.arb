@@ -1,9 +1,7 @@
 {
   "@@locale": "en",
   "appTitle": "DOOMSCRLL",
-  "@appTitle": {
-    "description": "The main title of the application"
-  },
   "landingTextLoading": "Loading today's projects...",
-  "landingTextNoData": "There seems to be no projects for today!\nPlease check again tomorrow~"
+  "landingTextNoData": "There seems to be no projects for today!\nPlease check again tomorrow~",
+  "landingTextCopy": "What are you looking for today?"
 }
