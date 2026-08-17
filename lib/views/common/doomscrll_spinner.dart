@@ -71,10 +71,7 @@ class _DoomscrllSpinnerState extends State<DoomscrllSpinner>
 
     Widget ooWidget = _buildSvg(_ooSvg);
     if (widget.hasBlendMode) {
-      ooWidget = _BlendMask(
-        blendMode: BlendMode.difference,
-        child: ooWidget,
-      );
+      ooWidget = _BlendMask(blendMode: BlendMode.difference, child: ooWidget);
     }
 
     Widget content = SizedBox(
@@ -102,23 +99,19 @@ class _DoomscrllSpinnerState extends State<DoomscrllSpinner>
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           content,
-          const SizedBox(height: 16),
+          const SizedBox(height: 36),
           Text(
             widget.label!,
             textAlign: TextAlign.center,
-            style: Theme.of(context).textTheme.titleMedium
-                ?.copyWith(color: widget.color),
+            style: Theme.of(context).textTheme.bodyLarge
+                ?.copyWith(color: AppColors.lagoon),
           ),
         ],
       );
     }
 
     if (widget.doFillParent) {
-      content = SizedBox.expand(
-        child: Center(
-          child: content,
-        ),
-      );
+      content = SizedBox.expand(child: Center(child: content));
     }
 
     return content;
@@ -145,10 +138,7 @@ class _RenderBlendGroup extends RenderProxyBox {
 class _BlendMask extends SingleChildRenderObjectWidget {
   final BlendMode blendMode;
 
-  const _BlendMask({
-    required this.blendMode,
-    required super.child,
-  });
+  const _BlendMask({required this.blendMode, required super.child});
 
   @override
   RenderObject createRenderObject(BuildContext context) {
@@ -157,7 +147,9 @@ class _BlendMask extends SingleChildRenderObjectWidget {
 
   @override
   void updateRenderObject(
-      BuildContext context, covariant _RenderBlendMask renderObject) {
+    BuildContext context,
+    covariant _RenderBlendMask renderObject,
+  ) {
     renderObject.blendMode = blendMode;
   }
 }
