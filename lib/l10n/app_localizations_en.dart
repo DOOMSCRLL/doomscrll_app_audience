@@ -13,10 +13,8 @@ class AppLocalizationsEn extends AppLocalizations {
   String get appTitle => 'DOOMSCRLL';
 
   @override
-  String get landingTitle => 'Explore Categories';
+  String get landingTextLoading => 'Loading today\'s projects...';
 
   @override
-  String projectCount(int count) {
-    return '$count Projects';
-  }
+  String get landingTextNoData => 'There seems to be no projects for today!\nPlease check again tomorrow~';
 }

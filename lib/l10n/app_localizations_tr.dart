@@ -13,10 +13,8 @@ class AppLocalizationsTr extends AppLocalizations {
   String get appTitle => 'DOOMSCRLL';
 
   @override
-  String get landingTitle => 'Kategorileri Keşfet';
+  String get landingTextLoading => 'Bugünün projeleri yükleniyor...';
 
   @override
-  String projectCount(int count) {
-    return '$count Proje';
-  }
+  String get landingTextNoData => 'Bugün için hiçbir proje yok!\nLütfen yarın tekrar gözat~';
 }
