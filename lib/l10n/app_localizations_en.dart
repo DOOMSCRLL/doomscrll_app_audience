@@ -17,4 +17,7 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get landingTextNoData => 'There seems to be no projects for today!\nPlease check again tomorrow~';
+
+  @override
+  String get landingTextCopy => 'What are you looking for today?';
 }

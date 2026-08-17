@@ -92,7 +92,7 @@ abstract class AppLocalizations {
   /// A list of this localizations delegate's supported locales.
   static const List<Locale> supportedLocales = <Locale>[Locale('en'), Locale('tr')];
 
-  /// The main title of the application
+  /// No description provided for @appTitle.
   ///
   /// In en, this message translates to:
   /// **'DOOMSCRLL'**
@@ -109,6 +109,12 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'There seems to be no projects for today!\nPlease check again tomorrow~'**
   String get landingTextNoData;
+
+  /// No description provided for @landingTextCopy.
+  ///
+  /// In en, this message translates to:
+  /// **'What are you looking for today?'**
+  String get landingTextCopy;
 }
 
 class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {

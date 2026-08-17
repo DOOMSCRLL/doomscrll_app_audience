@@ -17,4 +17,7 @@ class AppLocalizationsTr extends AppLocalizations {
 
   @override
   String get landingTextNoData => 'Bugün için hiçbir proje yok!\nLütfen yarın tekrar gözat~';
+
+  @override
+  String get landingTextCopy => 'Bugün neyi keşfedelim?';
 }
