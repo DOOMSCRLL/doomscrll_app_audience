@@ -20,4 +20,13 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get landingTextCopy => 'What are you looking for today?';
+
+  @override
+  String get contextMenuLabelContactUs => 'Contact us';
+
+  @override
+  String get contextMenuLabelHelp => 'Help';
+
+  @override
+  String get contextMenuLabelLegal => 'Legal';
 }

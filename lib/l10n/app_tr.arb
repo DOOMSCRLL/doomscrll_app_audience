@@ -3,5 +3,8 @@
   "appTitle": "DOOMSCRLL",
   "landingTextLoading": "Bugünün projeleri yükleniyor...",
   "landingTextNoData": "Bugün için hiçbir proje yok!\nLütfen yarın tekrar gözat~",
-  "landingTextCopy": "Bugün neyi keşfedelim?"
+  "landingTextCopy": "Bugün neyi keşfedelim?",
+  "contextMenuLabelContactUs": "Bize ulaşın",
+  "contextMenuLabelHelp": "Yardım",
+  "contextMenuLabelLegal": "Yasal"
 }

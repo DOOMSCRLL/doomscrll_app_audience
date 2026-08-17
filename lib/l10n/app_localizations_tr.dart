@@ -20,4 +20,13 @@ class AppLocalizationsTr extends AppLocalizations {
 
   @override
   String get landingTextCopy => 'Bugün neyi keşfedelim?';
+
+  @override
+  String get contextMenuLabelContactUs => 'Bize ulaşın';
+
+  @override
+  String get contextMenuLabelHelp => 'Yardım';
+
+  @override
+  String get contextMenuLabelLegal => 'Yasal';
 }

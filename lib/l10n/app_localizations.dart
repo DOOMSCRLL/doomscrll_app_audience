@@ -115,6 +115,24 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'What are you looking for today?'**
   String get landingTextCopy;
+
+  /// No description provided for @contextMenuLabelContactUs.
+  ///
+  /// In en, this message translates to:
+  /// **'Contact us'**
+  String get contextMenuLabelContactUs;
+
+  /// No description provided for @contextMenuLabelHelp.
+  ///
+  /// In en, this message translates to:
+  /// **'Help'**
+  String get contextMenuLabelHelp;
+
+  /// No description provided for @contextMenuLabelLegal.
+  ///
+  /// In en, this message translates to:
+  /// **'Legal'**
+  String get contextMenuLabelLegal;
 }
 
 class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {

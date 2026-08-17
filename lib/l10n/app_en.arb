@@ -3,5 +3,8 @@
   "appTitle": "DOOMSCRLL",
   "landingTextLoading": "Loading today's projects...",
   "landingTextNoData": "There seems to be no projects for today!\nPlease check again tomorrow~",
-  "landingTextCopy": "What are you looking for today?"
+  "landingTextCopy": "What are you looking for today?",
+  "contextMenuLabelContactUs": "Contact us",
+  "contextMenuLabelHelp": "Help",
+  "contextMenuLabelLegal": "Legal"
 }
