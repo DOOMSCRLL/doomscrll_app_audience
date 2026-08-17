@@ -1,16 +1,14 @@
+import "package:doomscrll_app_audience/theme/app_colors.dart";
 import "package:flutter/material.dart";
 import "package:flutter/rendering.dart";
 import "package:flutter_svg/flutter_svg.dart";
-
-import "package:doomscrll_app_audience/theme/app_colors.dart";
 
 class DoomscrllSpinner extends StatefulWidget {
   final double size;
   final Color color;
   final String? label;
   final bool hasBlendMode;
-  final bool hasBackdrop;
-  final Color? backdropColor;
+  final bool doFillParent;
 
   const DoomscrllSpinner({
     super.key,
@@ -18,8 +16,7 @@ class DoomscrllSpinner extends StatefulWidget {
     this.color = AppColors.bloodmoon,
     this.label,
     this.hasBlendMode = false,
-    this.hasBackdrop = false,
-    this.backdropColor,
+    this.doFillParent = false,
   });
 
   @override
@@ -116,10 +113,11 @@ class _DoomscrllSpinnerState extends State<DoomscrllSpinner>
       );
     }
 
-    if (widget.hasBackdrop) {
-      content = _Backdrop(
-        color: widget.backdropColor,
-        child: content,
+    if (widget.doFillParent) {
+      content = SizedBox.expand(
+        child: Center(
+          child: content,
+        ),
       );
     }
 
@@ -137,7 +135,7 @@ class _BlendGroup extends SingleChildRenderObjectWidget {
 class _RenderBlendGroup extends RenderProxyBox {
   @override
   void paint(PaintingContext context, Offset offset) {
-    final Rect rect = offset & size;
+    final Rect rect = (offset & size).inflate(size.longestSide * 0.25);
     context.canvas.saveLayer(rect, Paint());
     super.paint(context, offset);
     context.canvas.restore();
@@ -177,30 +175,9 @@ class _RenderBlendMask extends RenderProxyBox {
 
   @override
   void paint(PaintingContext context, Offset offset) {
-    final Rect rect = offset & size;
+    final Rect rect = (offset & size).inflate(size.longestSide * 0.25);
     context.canvas.saveLayer(rect, Paint()..blendMode = _blendMode);
     super.paint(context, offset);
     context.canvas.restore();
-  }
-}
-
-class _Backdrop extends StatelessWidget {
-  final Color? color;
-  final Widget child;
-
-  const _Backdrop({
-    this.color,
-    required this.child,
-  });
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      width: double.infinity,
-      height: double.infinity,
-      color: color ?? AppColors.darkness.withValues(alpha: 0.75),
-      alignment: Alignment.center,
-      child: child,
-    );
   }
 }
