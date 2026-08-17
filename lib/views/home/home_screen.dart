@@ -67,7 +67,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     children: _viewModel.categories
                         .map<Widget>(
                           (c) => CategoryAnchor(
-                            label: c.category,
+                            category: c.category,
                             count: c.count,
                             onPressed: () => _onCategoryPressed(c.category),
                           ),
