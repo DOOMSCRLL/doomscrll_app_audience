@@ -1,9 +1,9 @@
 import "package:flutter/material.dart";
 import "package:wakelock_plus/wakelock_plus.dart";
 
-import "l10n/app_localizations.dart";
-import "theme/app_theme.dart";
-import "views/landing_screen.dart";
+import "package:doomscrll_app_audience/l10n/app_localizations.dart";
+import "package:doomscrll_app_audience/theme/app_theme.dart";
+import "package:doomscrll_app_audience/views/home/home_screen.dart";
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
@@ -21,7 +21,7 @@ class MyApp extends StatelessWidget {
       theme: AppTheme.darkTheme,
       localizationsDelegates: AppLocalizations.localizationsDelegates,
       supportedLocales: AppLocalizations.supportedLocales,
-      home: const LandingScreen(),
+      home: const HomeScreen(),
     );
   }
 }
