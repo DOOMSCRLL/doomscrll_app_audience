@@ -1,3 +1,5 @@
+import "package:doomscrll_app_audience/l10n/dict_extension.dart";
+import "package:doomscrll_app_audience/theme/app_colors.dart";
 import "package:doomscrll_app_audience/viewmodels/landing_viewmodel.dart";
 import "package:doomscrll_app_audience/views/common/doomscrll_refresh_indicator.dart";
 import "package:doomscrll_app_audience/views/common/doomscrll_spinner.dart";
@@ -28,24 +30,29 @@ class _HomeScreenState extends State<HomeScreen> {
     super.dispose();
   }
 
+  Widget getBody(BuildContext context) => switch ((_viewModel.isLoading, _viewModel.categories.isEmpty)) {
+    (true, true) => DoomscrllSpinner(label: context.dict.landingTextLoading, hasBlendMode: true, doFillParent: true),
+    (false, true) => Center(
+      child: Text(
+        context.dict.landingTextNoData,
+        style: Theme.of(context).textTheme.bodyLarge?.copyWith(color: AppColors.lagoon),
+      ),
+    ),
+    _ => const SingleChildScrollView(
+      physics: AlwaysScrollableScrollPhysics(),
+      padding: EdgeInsets.symmetric(horizontal: 20.0, vertical: 24.0),
+      child: SizedBox(width: 720, height: 1080),
+    ),
+  };
+
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext _) {
     return Scaffold(
       appBar: const BrandAppbar(),
       bottomNavigationBar: const LogoBottomNavbar(),
       body: DoomscrllRefreshIndicator(
         onRefresh: _viewModel.fetchTodaysCategories,
-        child: ListenableBuilder(
-          listenable: _viewModel,
-          builder: (_, _) {
-            return const SingleChildScrollView(
-              physics: AlwaysScrollableScrollPhysics(),
-              padding: EdgeInsets.symmetric(horizontal: 20.0, vertical: 24.0),
-              //child: SizedBox(width: 720, height: 1080),
-              child: DoomscrllSpinner(hasBlendMode: true, hasBackdrop: true),
-            );
-          },
-        ),
+        child: ListenableBuilder(listenable: _viewModel, builder: (context, _) => getBody(context)),
       ),
     );
   }
