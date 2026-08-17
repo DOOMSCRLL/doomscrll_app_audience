@@ -2,6 +2,7 @@ import "package:doomscrll_app_audience/l10n/dict_extension.dart";
 import "package:doomscrll_app_audience/viewmodels/landing_viewmodel.dart";
 import "package:doomscrll_app_audience/views/common/doomscrll_refresh_indicator.dart";
 import "package:doomscrll_app_audience/views/common/doomscrll_spinner.dart";
+import "package:doomscrll_app_audience/views/feed/feed_screen.dart";
 import "package:doomscrll_app_audience/views/home/widgets/category_anchor.dart";
 import "package:doomscrll_app_audience/views/home/widgets/logo_bottom_navbar.dart";
 import "package:doomscrll_app_audience/views/home/widgets/wordmark_appbar.dart";
@@ -9,6 +10,10 @@ import "package:flutter/material.dart";
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
+
+  static Route<void> route() {
+    return MaterialPageRoute(builder: (context) => const HomeScreen());
+  }
 
   @override
   State<HomeScreen> createState() => _HomeScreenState();
@@ -30,7 +35,11 @@ class _HomeScreenState extends State<HomeScreen> {
     super.dispose();
   }
 
-  Widget getBody(BuildContext context) => switch ((_viewModel.isLoading, _viewModel.categories.isEmpty)) {
+  void _onCategoryPressed(String category) {
+    Navigator.of(context).push(FeedScreen.route(category: category));
+  }
+
+  Widget _buildBody(BuildContext context) => switch ((_viewModel.isLoading, _viewModel.categories.isEmpty)) {
     (true, true) => DoomscrllSpinner(label: context.dict.landingTextLoading, hasBlendMode: true, doFillParent: true),
     (false, true) => Center(child: Text(context.dict.landingTextNoData, style: Theme.of(context).textTheme.bodyLarge)),
     _ => LayoutBuilder(
@@ -56,7 +65,13 @@ class _HomeScreenState extends State<HomeScreen> {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     spacing: 16,
                     children: _viewModel.categories
-                        .map<Widget>((c) => CategoryAnchor(label: c.category, count: c.count, onPressed: () => {}))
+                        .map<Widget>(
+                          (c) => CategoryAnchor(
+                            label: c.category,
+                            count: c.count,
+                            onPressed: () => _onCategoryPressed(c.category),
+                          ),
+                        )
                         .toList(growable: false),
                   ),
                 ],
@@ -75,7 +90,7 @@ class _HomeScreenState extends State<HomeScreen> {
       bottomNavigationBar: const LogoBottomNavbar(),
       body: DoomscrllRefreshIndicator(
         onRefresh: _viewModel.fetchTodaysCategories,
-        child: ListenableBuilder(listenable: _viewModel, builder: (context, _) => getBody(context)),
+        child: ListenableBuilder(listenable: _viewModel, builder: (context, _) => _buildBody(context)),
       ),
     );
   }
