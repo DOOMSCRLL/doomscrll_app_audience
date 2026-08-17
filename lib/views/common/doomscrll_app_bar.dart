@@ -1,6 +1,6 @@
 import "package:flutter/material.dart";
 
-import "doomscrll_icon.dart";
+import "package:doomscrll_app_audience/views/common/doomscrll_icon.dart";
 
 class DoomscrllAppBar extends StatelessWidget implements PreferredSizeWidget {
   final String title;
