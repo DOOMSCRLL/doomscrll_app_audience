@@ -72,7 +72,7 @@ class DoomscrllIcon extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final iconColor = color ?? Theme.of(context).colorScheme.onSurface;
+    final iconColor = color ?? IconTheme.of(context).color ?? Theme.of(context).colorScheme.onSurface;
 
     return SvgPicture.asset(
       _assetPath,
