@@ -9,6 +9,7 @@ import "package:doomscrll_app_audience/views/common/doomscrll_wavy_divider.dart"
 import "package:doomscrll_app_audience/views/feed/widgets/feed_appbar.dart";
 import "package:doomscrll_app_audience/views/feed/widgets/feed_bottom_navbar.dart";
 import "package:doomscrll_app_audience/views/feed/widgets/project_preview_card.dart";
+import "package:doomscrll_app_audience/views/feed/widgets/query_sheet.dart";
 import "package:doomscrll_app_audience/views/project/project_screen.dart";
 import "package:flutter/material.dart";
 
@@ -67,6 +68,23 @@ class _FeedScreenState extends State<FeedScreen> {
     super.dispose();
   }
 
+  void _showQueryMenu() {
+    QuerySheet.show(
+      context: context,
+      currentCategory: _viewModel.selectedCategory,
+      currentTag: _viewModel.selectedTag,
+      availableCategories: _viewModel.projectCounts,
+      onApply: ({required category, tag}) {
+        _viewModel.init(
+          initialCategory: category,
+          tag: tag,
+          totalCategoryCount: widget.totalProjectCount,
+          projectCounts: widget.projectCounts,
+        );
+      },
+    );
+  }
+
   Widget _buildBottomNavbar() => ListenableBuilder(
     listenable: _viewModel,
     builder: (_, _) => FeedBottomNavbar(
@@ -74,9 +92,7 @@ class _FeedScreenState extends State<FeedScreen> {
       countPages: _viewModel.countPages,
       onPreviousPage: _viewModel.hasPrevPage ? _viewModel.previousPage : null,
       onNextPage: _viewModel.hasNextPage ? _viewModel.nextPage : null,
-      onFilterPressed: () {
-        /* TODO: Open QuerySheet */
-      },
+      onFilterPressed: _showQueryMenu,
     ),
   );
 
@@ -108,9 +124,7 @@ class _FeedScreenState extends State<FeedScreen> {
           project: preview,
           itemIndex: index,
           onTap: () {
-            Navigator.of(context).push(
-              ProjectScreen.route(referenceId: preview.referenceId),
-            );
+            Navigator.of(context).push(ProjectScreen.route(referenceId: preview.referenceId));
           },
         );
       },
