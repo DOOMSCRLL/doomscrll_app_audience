@@ -9,6 +9,7 @@ import "package:doomscrll_app_audience/views/common/doomscrll_wavy_divider.dart"
 import "package:doomscrll_app_audience/views/feed/widgets/feed_appbar.dart";
 import "package:doomscrll_app_audience/views/feed/widgets/feed_bottom_navbar.dart";
 import "package:doomscrll_app_audience/views/feed/widgets/project_preview_card.dart";
+import "package:doomscrll_app_audience/views/project/project_screen.dart";
 import "package:flutter/material.dart";
 
 class FeedScreen extends StatefulWidget {
@@ -107,7 +108,9 @@ class _FeedScreenState extends State<FeedScreen> {
           project: preview,
           itemIndex: index,
           onTap: () {
-            /* TODO: Navigate to ProjectDetailsScreen */
+            Navigator.of(context).push(
+              ProjectScreen.route(referenceId: preview.referenceId),
+            );
           },
         );
       },
