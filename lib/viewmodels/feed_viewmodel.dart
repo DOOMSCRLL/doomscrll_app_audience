@@ -49,9 +49,20 @@ class FeedViewModel extends ChangeNotifier {
   }) async {
     _selectedCategory = initialCategory;
     _selectedTag = tag;
-    _totalCategoryCount = totalCategoryCount;
     _projectCounts = projectCounts;
     _currentPage = 1;
+
+    if (projectCounts.isNotEmpty) {
+      for (final c in projectCounts) {
+        if (c.category == initialCategory) {
+          _totalCategoryCount = c.count;
+          break;
+        }
+      }
+    } else {
+      _totalCategoryCount = totalCategoryCount;
+    }
+
     await fetchFeed();
   }
 
