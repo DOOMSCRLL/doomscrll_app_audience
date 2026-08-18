@@ -35,8 +35,14 @@ class _HomeScreenState extends State<HomeScreen> {
     super.dispose();
   }
 
-  void _onCategoryPressed(String category) {
-    Navigator.of(context).push(FeedScreen.route(category: category));
+  void _onCategoryPressed(String category, int count) {
+    Navigator.of(context).push(
+      FeedScreen.route(
+        initialCategory: category,
+        totalProjectCount: count,
+        projectCounts: _viewModel.categories,
+      ),
+    );
   }
 
   Widget _buildBody(BuildContext context) => switch ((_viewModel.isLoading, _viewModel.categories.isEmpty)) {
@@ -69,7 +75,7 @@ class _HomeScreenState extends State<HomeScreen> {
                           (c) => CategoryAnchor(
                             category: c.category,
                             count: c.count,
-                            onPressed: () => _onCategoryPressed(c.category),
+                            onPressed: () => _onCategoryPressed(c.category, c.count),
                           ),
                         )
                         .toList(growable: false),
