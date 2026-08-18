@@ -1,3 +1,4 @@
+import "package:doomscrll_app_audience/models/project_category_count.dart";
 import "package:doomscrll_app_audience/models/project_preview.dart";
 import "package:doomscrll_app_audience/services/project_service.dart";
 import "package:flutter/foundation.dart";
@@ -11,12 +12,14 @@ class FeedViewModel extends ChangeNotifier {
   String? _selectedTag;
   int _currentPage = 1;
   int _totalCategoryCount = 0;
+  List<ProjectCategoryCount> _projectCounts = [];
   int? _queryCount;
 
   String get selectedCategory => _selectedCategory;
   String? get selectedTag => _selectedTag;
   int get currentPage => _currentPage;
   int? get queryCount => _queryCount;
+  List<ProjectCategoryCount> get projectCounts => List.unmodifiable(_projectCounts);
 
   List<ProjectPreview> _previews = [];
   bool _isLoading = false;
@@ -38,10 +41,16 @@ class FeedViewModel extends ChangeNotifier {
   bool get hasPrevPage => _currentPage > 1;
   bool get hasNextPage => _currentPage < countPages;
 
-  Future<void> init({required String category, String? tag, int totalCategoryCount = 0}) async {
-    _selectedCategory = category;
+  Future<void> init({
+    required String initialCategory,
+    String? tag,
+    int totalCategoryCount = 0,
+    List<ProjectCategoryCount> projectCounts = const [],
+  }) async {
+    _selectedCategory = initialCategory;
     _selectedTag = tag;
     _totalCategoryCount = totalCategoryCount;
+    _projectCounts = projectCounts;
     _currentPage = 1;
     await fetchFeed();
   }
@@ -51,6 +60,12 @@ class FeedViewModel extends ChangeNotifier {
     _selectedCategory = category;
     _selectedTag = null;
     _currentPage = 1;
+    for (final c in _projectCounts) {
+      if (c.category == category) {
+        _totalCategoryCount = c.count;
+        break;
+      }
+    }
     await fetchFeed();
   }
 
