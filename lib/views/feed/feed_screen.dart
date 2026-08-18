@@ -102,33 +102,48 @@ class _FeedScreenState extends State<FeedScreen> {
     _viewModel.previews.isEmpty,
   )) {
     (true, _, true) => const Center(child: DoomscrllSpinner(size: 48)),
-    (_, final String err, true) => Center(
-      child: Column(
-        mainAxisSize: MainAxisSize.min,
-        children: [
-          Text(err, style: Theme.of(context).textTheme.bodyLarge?.copyWith(color: AppColors.bloodmoon)),
-          const SizedBox(height: 16),
-          OutlinedButton(onPressed: _viewModel.fetchFeed, child: Text(context.dict.feedActionLabelRetry.upper)),
+    (_, final String err, true) => CustomScrollView(
+        physics: const AlwaysScrollableScrollPhysics(),
+        slivers: [
+          SliverFillRemaining(
+            child: Center(
+              child: Column(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  Text(err, style: Theme.of(context).textTheme.bodyLarge?.copyWith(color: AppColors.bloodmoon)),
+                  const SizedBox(height: 16),
+                  OutlinedButton(onPressed: _viewModel.fetchFeed, child: Text(context.dict.feedActionLabelRetry.upper)),
+                ],
+              ),
+            ),
+          ),
         ],
       ),
-    ),
-    (_, _, true) => Center(child: Text(context.dict.feedCopyNoProjects, style: Theme.of(context).textTheme.bodyLarge)),
+    (_, _, true) => CustomScrollView(
+        physics: const AlwaysScrollableScrollPhysics(),
+        slivers: [
+          SliverFillRemaining(
+            child: Center(child: Text(context.dict.feedCopyNoProjects, style: Theme.of(context).textTheme.bodyLarge)),
+          ),
+        ],
+      ),
     _ => ListView.separated(
-      padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 24),
-      itemCount: _viewModel.previews.length,
-      separatorBuilder: (_, _) =>
-          const Padding(padding: EdgeInsets.symmetric(vertical: 40), child: DoomscrllWavyDivider()),
-      itemBuilder: (context, index) {
-        final preview = _viewModel.previews[index];
-        return ProjectPreviewCard(
-          project: preview,
-          itemIndex: index,
-          onTap: () {
-            Navigator.of(context).push(ProjectScreen.route(referenceId: preview.referenceId));
-          },
-        );
-      },
-    ),
+        physics: const AlwaysScrollableScrollPhysics(),
+        padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 24),
+        itemCount: _viewModel.previews.length,
+        separatorBuilder: (_, _) =>
+            const Padding(padding: EdgeInsets.symmetric(vertical: 40), child: DoomscrllWavyDivider()),
+        itemBuilder: (context, index) {
+          final preview = _viewModel.previews[index];
+          return ProjectPreviewCard(
+            project: preview,
+            itemIndex: index,
+            onTap: () {
+              Navigator.of(context).push(ProjectScreen.route(referenceId: preview.referenceId));
+            },
+          );
+        },
+      ),
   };
 
   @override
