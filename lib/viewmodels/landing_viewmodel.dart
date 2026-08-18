@@ -25,7 +25,7 @@ class LandingViewModel extends ChangeNotifier {
     notifyListeners();
 
     try {
-      _categories = await _projectService.getCategoryCounts(
+      _categories = await _projectService.getProjectCountsFor(
         date: DateTime.now(),
       );
     } catch (e) {
