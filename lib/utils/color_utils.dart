@@ -22,17 +22,14 @@ Color generateColorFrom(String text) {
   litHash = litHash.abs();
 
   final h = ((hash * 137.508) % 360).toDouble();
-  const minS = 35;
-  const maxS = 78;
+
+  const minS = 25;
+  const maxS = 40;
   final s = ((minS + (satHash % (maxS - minS + 1))) / 100).toDouble();
 
-  const minL = 58;
-  const maxL = 82;
-  var lVal = minL + (litHash % (maxL - minL + 1));
-  final rad = (h * 3.141592653589793) / 180;
-  final luminanceFactor = (rad - 3.141592653589793 / 3).abs();
-  lVal -= (luminanceFactor * 4).round();
-  final l = (lVal.clamp(54, 84) / 100).toDouble();
+  const minL = 72;
+  const maxL = 84;
+  final l = ((minL + (litHash % (maxL - minL + 1))) / 100).toDouble();
 
   return HSLColor.fromAHSL(1.0, h, s, l).toColor();
 }
