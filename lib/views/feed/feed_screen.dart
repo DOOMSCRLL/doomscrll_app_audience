@@ -10,7 +10,7 @@ import "package:doomscrll_app_audience/views/feed/widgets/feed_appbar.dart";
 import "package:doomscrll_app_audience/views/feed/widgets/feed_bottom_navbar.dart";
 import "package:doomscrll_app_audience/views/feed/widgets/project_preview_card.dart";
 import "package:doomscrll_app_audience/views/feed/widgets/query_sheet.dart";
-import "package:doomscrll_app_audience/views/project/project_screen.dart";
+import "package:doomscrll_app_audience/views/project_details/project_details_screen.dart";
 import "package:flutter/material.dart";
 
 class FeedScreen extends StatefulWidget {
@@ -103,47 +103,47 @@ class _FeedScreenState extends State<FeedScreen> {
   )) {
     (true, _, true) => const Center(child: DoomscrllSpinner(size: 48)),
     (_, final String err, true) => CustomScrollView(
-        physics: const AlwaysScrollableScrollPhysics(),
-        slivers: [
-          SliverFillRemaining(
-            child: Center(
-              child: Column(
-                mainAxisSize: MainAxisSize.min,
-                children: [
-                  Text(err, style: Theme.of(context).textTheme.bodyLarge?.copyWith(color: AppColors.bloodmoon)),
-                  const SizedBox(height: 16),
-                  OutlinedButton(onPressed: _viewModel.fetchFeed, child: Text(context.dict.feedActionLabelRetry.upper)),
-                ],
-              ),
+      physics: const AlwaysScrollableScrollPhysics(),
+      slivers: [
+        SliverFillRemaining(
+          child: Center(
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                Text(err, style: Theme.of(context).textTheme.bodyLarge?.copyWith(color: AppColors.bloodmoon)),
+                const SizedBox(height: 16),
+                OutlinedButton(onPressed: _viewModel.fetchFeed, child: Text(context.dict.feedActionLabelRetry.upper)),
+              ],
             ),
           ),
-        ],
-      ),
+        ),
+      ],
+    ),
     (_, _, true) => CustomScrollView(
-        physics: const AlwaysScrollableScrollPhysics(),
-        slivers: [
-          SliverFillRemaining(
-            child: Center(child: Text(context.dict.feedCopyNoProjects, style: Theme.of(context).textTheme.bodyLarge)),
-          ),
-        ],
-      ),
+      physics: const AlwaysScrollableScrollPhysics(),
+      slivers: [
+        SliverFillRemaining(
+          child: Center(child: Text(context.dict.feedCopyNoProjects, style: Theme.of(context).textTheme.bodyLarge)),
+        ),
+      ],
+    ),
     _ => ListView.separated(
-        physics: const AlwaysScrollableScrollPhysics(),
-        padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 24),
-        itemCount: _viewModel.previews.length,
-        separatorBuilder: (_, _) =>
-            const Padding(padding: EdgeInsets.symmetric(vertical: 40), child: DoomscrllWavyDivider()),
-        itemBuilder: (context, index) {
-          final preview = _viewModel.previews[index];
-          return ProjectPreviewCard(
-            project: preview,
-            itemIndex: index,
-            onTap: () {
-              Navigator.of(context).push(ProjectScreen.route(referenceId: preview.referenceId));
-            },
-          );
-        },
-      ),
+      physics: const AlwaysScrollableScrollPhysics(),
+      padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 24),
+      itemCount: _viewModel.previews.length,
+      separatorBuilder: (_, _) =>
+          const Padding(padding: EdgeInsets.symmetric(vertical: 40), child: DoomscrllWavyDivider()),
+      itemBuilder: (context, index) {
+        final preview = _viewModel.previews[index];
+        return ProjectPreviewCard(
+          project: preview,
+          itemIndex: index,
+          onTap: () {
+            Navigator.of(context).push(ProjectDetailsScreen.route(referenceId: preview.referenceId));
+          },
+        );
+      },
+    ),
   };
 
   @override
