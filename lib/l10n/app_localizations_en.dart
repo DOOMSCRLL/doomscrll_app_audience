@@ -37,6 +37,24 @@ class AppLocalizationsEn extends AppLocalizations {
   String get contextMenuLabelLegal => 'Legal';
 
   @override
+  String get queryMenuTitle => 'Filter projects';
+
+  @override
+  String get queryMenuLabelCategory => 'Change the category:';
+
+  @override
+  String get queryMenuLabelTag => 'Select a tag:';
+
+  @override
+  String get queryMenuTagSearchHint => 'Search for a #tag.';
+
+  @override
+  String get queryMenuActionLabelApply => 'Apply filters';
+
+  @override
+  String get queryMenuActionLabelCancel => 'Cancel';
+
+  @override
   String get categoryLabelVideoGames => 'Video Games';
 
   @override

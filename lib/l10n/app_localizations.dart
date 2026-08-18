@@ -146,6 +146,42 @@ abstract class AppLocalizations {
   /// **'Legal'**
   String get contextMenuLabelLegal;
 
+  /// No description provided for @queryMenuTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Filter projects'**
+  String get queryMenuTitle;
+
+  /// No description provided for @queryMenuLabelCategory.
+  ///
+  /// In en, this message translates to:
+  /// **'Change the category:'**
+  String get queryMenuLabelCategory;
+
+  /// No description provided for @queryMenuLabelTag.
+  ///
+  /// In en, this message translates to:
+  /// **'Select a tag:'**
+  String get queryMenuLabelTag;
+
+  /// No description provided for @queryMenuTagSearchHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Search for a #tag.'**
+  String get queryMenuTagSearchHint;
+
+  /// No description provided for @queryMenuActionLabelApply.
+  ///
+  /// In en, this message translates to:
+  /// **'Apply filters'**
+  String get queryMenuActionLabelApply;
+
+  /// No description provided for @queryMenuActionLabelCancel.
+  ///
+  /// In en, this message translates to:
+  /// **'Cancel'**
+  String get queryMenuActionLabelCancel;
+
   /// No description provided for @categoryLabelVideoGames.
   ///
   /// In en, this message translates to:

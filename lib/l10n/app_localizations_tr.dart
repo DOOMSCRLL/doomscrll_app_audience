@@ -37,6 +37,24 @@ class AppLocalizationsTr extends AppLocalizations {
   String get contextMenuLabelLegal => 'Yasal';
 
   @override
+  String get queryMenuTitle => 'Projeleri süz';
+
+  @override
+  String get queryMenuLabelCategory => 'Kategoriyi değiştir:';
+
+  @override
+  String get queryMenuLabelTag => 'Bir etiket seç:';
+
+  @override
+  String get queryMenuTagSearchHint => 'Bir #etiket arayın.';
+
+  @override
+  String get queryMenuActionLabelApply => 'Filtreleri uygula';
+
+  @override
+  String get queryMenuActionLabelCancel => 'Geri dön';
+
+  @override
   String get categoryLabelVideoGames => 'Oyunlar';
 
   @override
