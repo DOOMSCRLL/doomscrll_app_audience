@@ -1,25 +1,37 @@
 import "package:doomscrll_app_audience/models/project_preview.dart";
 import "package:doomscrll_app_audience/theme/app_colors.dart";
 import "package:doomscrll_app_audience/views/common/doomscrll_icon.dart";
+import "package:doomscrll_app_audience/views/common/doomscrll_image_mask.dart";
 import "package:doomscrll_app_audience/views/common/tag_chip.dart";
 import "package:doomscrll_app_audience/views/feed/widgets/preview_cover_image.dart";
 import "package:flutter/material.dart";
 
 class ProjectPreviewCard extends StatelessWidget {
   final ProjectPreview project;
+  final int itemIndex;
   final VoidCallback? onTap;
 
-  const ProjectPreviewCard({super.key, required this.project, this.onTap});
+  const ProjectPreviewCard({
+    super.key,
+    required this.project,
+    required this.itemIndex,
+    this.onTap,
+  });
 
   @override
   Widget build(BuildContext context) {
+    final shape = getMaskShapeForIndex(itemIndex);
+
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       mainAxisSize: MainAxisSize.min,
       spacing: 16,
       children: [
         Text("@${project.authorUsername}", style: Theme.of(context).textTheme.labelLarge),
-        PreviewCoverImage(coverImagePath: project.coverImagePath!),
+        PreviewCoverImage(
+          coverImagePath: project.coverImagePath!,
+          shape: shape,
+        ),
         SizedBox(
           width: double.infinity,
           child: Wrap(
