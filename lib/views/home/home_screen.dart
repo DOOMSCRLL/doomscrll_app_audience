@@ -1,5 +1,5 @@
 import "package:doomscrll_app_audience/l10n/dict_extension.dart";
-import "package:doomscrll_app_audience/viewmodels/landing_viewmodel.dart";
+import "package:doomscrll_app_audience/viewmodels/home_viewmodel.dart";
 import "package:doomscrll_app_audience/views/common/doomscrll_refresh_indicator.dart";
 import "package:doomscrll_app_audience/views/common/doomscrll_spinner.dart";
 import "package:doomscrll_app_audience/views/feed/feed_screen.dart";
@@ -20,12 +20,12 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
-  late final LandingViewModel _viewModel;
+  late final HomeViewModel _viewModel;
 
   @override
   void initState() {
     super.initState();
-    _viewModel = LandingViewModel();
+    _viewModel = HomeViewModel();
     _viewModel.fetchTodaysCategories();
   }
 

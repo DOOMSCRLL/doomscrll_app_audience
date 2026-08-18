@@ -2,14 +2,14 @@ import "package:doomscrll_app_audience/models/project_category_count.dart";
 import "package:doomscrll_app_audience/services/project_service.dart";
 import "package:flutter/foundation.dart";
 
-class LandingViewModel extends ChangeNotifier {
+class HomeViewModel extends ChangeNotifier {
   final ProjectService _projectService;
 
   List<ProjectCategoryCount> _categories = [];
   bool _isLoading = false;
   String? _errorMessage;
 
-  LandingViewModel({ProjectService? projectService})
+  HomeViewModel({ProjectService? projectService})
     : _projectService = projectService ?? ProjectService();
 
   List<ProjectCategoryCount> get categories => List.unmodifiable(_categories);
