@@ -22,44 +22,49 @@ class ProjectPreviewCard extends StatelessWidget {
   Widget build(BuildContext context) {
     final shape = getMaskShapeForIndex(itemIndex);
 
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      mainAxisSize: MainAxisSize.min,
-      spacing: 16,
-      children: [
-        Text("@${project.authorUsername}", style: Theme.of(context).textTheme.labelLarge),
-        PreviewCoverImage(
-          coverImagePath: project.coverImagePath!,
-          shape: shape,
-        ),
-        SizedBox(
-          width: double.infinity,
-          child: Wrap(
-            alignment: WrapAlignment.center,
-            spacing: 8,
-            runSpacing: 4,
-            children: List.generate(
-              project.tags.length,
-              (index) => TagChip(tag: project.tags[index], isItalic: index.isOdd),
-            ),
+    return InkWell(
+      onTap: onTap,
+      splashColor: Colors.transparent,
+      highlightColor: Colors.transparent,
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        mainAxisSize: MainAxisSize.min,
+        spacing: 16,
+        children: [
+          Text("@${project.authorUsername}", style: Theme.of(context).textTheme.labelLarge),
+          PreviewCoverImage(
+            coverImagePath: project.coverImagePath!,
+            shape: shape,
           ),
-        ),
-        Row(
-          children: [
-            const DoomscrllIcon(DoomscrllIconName.starmark, size: 24, color: AppColors.lagoon),
-            Expanded(
-              child: Text(
-                project.name,
-                textAlign: TextAlign.center,
-                maxLines: 1,
-                overflow: TextOverflow.ellipsis,
-                style: Theme.of(context).textTheme.bodyLarge,
+          SizedBox(
+            width: double.infinity,
+            child: Wrap(
+              alignment: WrapAlignment.center,
+              spacing: 8,
+              runSpacing: 4,
+              children: List.generate(
+                project.tags.length,
+                (index) => TagChip(tag: project.tags[index], isItalic: index.isOdd),
               ),
             ),
-            IconButton(onPressed: onTap, icon: const DoomscrllIcon(DoomscrllIconName.arrowForward, size: 24)),
-          ],
-        ),
-      ],
+          ),
+          Row(
+            children: [
+              const DoomscrllIcon(DoomscrllIconName.starmark, size: 24, color: AppColors.lagoon),
+              Expanded(
+                child: Text(
+                  project.name,
+                  textAlign: TextAlign.center,
+                  maxLines: 1,
+                  overflow: TextOverflow.ellipsis,
+                  style: Theme.of(context).textTheme.bodyLarge,
+                ),
+              ),
+              const DoomscrllIcon(DoomscrllIconName.arrowForward, size: 24),
+            ],
+          ),
+        ],
+      ),
     );
   }
 }
