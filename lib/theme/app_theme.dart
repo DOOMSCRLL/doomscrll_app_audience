@@ -31,6 +31,7 @@ abstract final class AppTheme {
       filledButtonTheme: DoomscrllButtonTheme.darkFilledButtonTheme,
       outlinedButtonTheme: DoomscrllButtonTheme.darkOutlinedButtonTheme,
       textButtonTheme: DoomscrllButtonTheme.darkTextButtonTheme,
+      iconButtonTheme: DoomscrllButtonTheme.darkIconButtonTheme,
       inputDecorationTheme: DoomscrllInputTheme.darkInputDecorationTheme,
     );
   }

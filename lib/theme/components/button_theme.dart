@@ -107,4 +107,26 @@ abstract final class DoomscrllButtonTheme {
       ),
     );
   }
+
+  static IconButtonThemeData get darkIconButtonTheme {
+    return IconButtonThemeData(
+      style: ButtonStyle(
+        foregroundColor: WidgetStateProperty.resolveWith((states) {
+          if (states.contains(WidgetState.disabled)) {
+            return AppColors.lagoon.withValues(alpha: 0.25);
+          }
+          if (states.contains(WidgetState.pressed)) {
+            return AppColors.bloodmoon;
+          }
+          return AppColors.lagoon;
+        }),
+        backgroundColor: WidgetStateProperty.resolveWith((states) {
+          if (states.contains(WidgetState.disabled)) {
+            return AppColors.darkness.withValues(alpha: 0.25);
+          }
+          return null;
+        }),
+      ),
+    );
+  }
 }
