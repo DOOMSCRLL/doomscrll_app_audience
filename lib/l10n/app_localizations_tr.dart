@@ -22,6 +22,12 @@ class AppLocalizationsTr extends AppLocalizations {
   String get landingTextCopy => 'Bugün neyi keşfedelim?';
 
   @override
+  String get feedActionLabelRetry => 'Yeniden dene';
+
+  @override
+  String get feedCopyNoProjects => 'Görünüşe göre burada hiç proje yok!';
+
+  @override
   String get contextMenuLabelContactUs => 'Bize ulaşın';
 
   @override

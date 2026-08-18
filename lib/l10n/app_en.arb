@@ -4,6 +4,8 @@
   "landingTextLoading": "Loading today's projects...",
   "landingTextNoData": "There seems to be no projects for today!\nPlease check again tomorrow~",
   "landingTextCopy": "What are you looking for today?",
+  "feedActionLabelRetry": "Try again",
+  "feedCopyNoProjects": "It seems that there are no projects here!",
   "contextMenuLabelContactUs": "Contact us",
   "contextMenuLabelHelp": "Help",
   "contextMenuLabelLegal": "Legal",

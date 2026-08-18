@@ -116,6 +116,18 @@ abstract class AppLocalizations {
   /// **'What are you looking for today?'**
   String get landingTextCopy;
 
+  /// No description provided for @feedActionLabelRetry.
+  ///
+  /// In en, this message translates to:
+  /// **'Try again'**
+  String get feedActionLabelRetry;
+
+  /// No description provided for @feedCopyNoProjects.
+  ///
+  /// In en, this message translates to:
+  /// **'It seems that there are no projects here!'**
+  String get feedCopyNoProjects;
+
   /// No description provided for @contextMenuLabelContactUs.
   ///
   /// In en, this message translates to:

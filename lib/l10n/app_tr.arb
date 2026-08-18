@@ -4,6 +4,8 @@
   "landingTextLoading": "Bugünün projeleri yükleniyor...",
   "landingTextNoData": "Bugün için hiçbir proje yok!\nLütfen yarın tekrar gözat~",
   "landingTextCopy": "Bugün neyi keşfedelim?",
+  "feedActionLabelRetry": "Yeniden dene",
+  "feedCopyNoProjects": "Görünüşe göre burada hiç proje yok!",
   "contextMenuLabelContactUs": "Bize ulaşın",
   "contextMenuLabelHelp": "Yardım",
   "contextMenuLabelLegal": "Yasal",

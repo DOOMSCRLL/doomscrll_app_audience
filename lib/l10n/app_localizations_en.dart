@@ -22,6 +22,12 @@ class AppLocalizationsEn extends AppLocalizations {
   String get landingTextCopy => 'What are you looking for today?';
 
   @override
+  String get feedActionLabelRetry => 'Try again';
+
+  @override
+  String get feedCopyNoProjects => 'It seems that there are no projects here!';
+
+  @override
   String get contextMenuLabelContactUs => 'Contact us';
 
   @override
