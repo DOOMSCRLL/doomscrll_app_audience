@@ -60,7 +60,7 @@ class ProjectPreviewCard extends StatelessWidget {
                   style: Theme.of(context).textTheme.bodyLarge,
                 ),
               ),
-              const DoomscrllIcon(DoomscrllIconName.arrowForward, size: 24),
+              const DoomscrllIcon(DoomscrllIconName.arrowForward, size: 24, color: AppColors.lagoon),
             ],
           ),
         ],
