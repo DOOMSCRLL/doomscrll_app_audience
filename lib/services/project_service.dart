@@ -20,7 +20,7 @@ class ProjectService {
       : _apiService = apiService ?? ApiService();
 
   Future<List<ProjectCategoryCount>> getProjectCountsFor({DateTime? date}) async {
-    final targetDate = date ?? DateTime.now();
+    final targetDate = (date ?? DateTime.now()).toUtc();
     final formattedDate =
         "${targetDate.year}-${targetDate.month.toString().padLeft(2, "0")}-${targetDate.day.toString().padLeft(2, "0")}";
     final endpoint = "/projects/projects-per-category?date=$formattedDate";

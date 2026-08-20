@@ -26,7 +26,7 @@ class HomeViewModel extends ChangeNotifier {
 
     try {
       _categories = await _projectService.getProjectCountsFor(
-        date: DateTime.now(),
+        date: DateTime.now().toUtc(),
       );
     } catch (e) {
       _errorMessage = e.toString();
