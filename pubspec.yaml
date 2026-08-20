@@ -85,3 +85,8 @@ flutter:
           weight: 700
           style: italic
 
+flutter_launcher_icons:
+  android: "ic_icon"
+  ios: true
+  remove_alpha_ios: true
+  image_path: "assets/app_icon/app_icon.png"
