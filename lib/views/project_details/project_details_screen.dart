@@ -1,10 +1,12 @@
 import "package:doomscrll_app_audience/l10n/category_l10n_extension.dart";
 import "package:doomscrll_app_audience/l10n/dict_extension.dart";
+import "package:doomscrll_app_audience/models/platform_record.dart";
 import "package:doomscrll_app_audience/models/project.dart";
 import "package:doomscrll_app_audience/viewmodels/project_details_viewmodel.dart";
 import "package:doomscrll_app_audience/views/common/doomscrll_refresh_indicator.dart";
 import "package:doomscrll_app_audience/views/common/doomscrll_spinner.dart";
 import "package:doomscrll_app_audience/views/common/feature_chip.dart";
+import "package:doomscrll_app_audience/views/common/platform_anchor.dart";
 import "package:doomscrll_app_audience/views/common/tag_chip.dart";
 import "package:doomscrll_app_audience/views/project_details/widgets/detail_card.dart";
 import "package:doomscrll_app_audience/views/project_details/widgets/project_cover_app_bar.dart";
@@ -40,6 +42,19 @@ class _ProjectDetailsScreenState extends State<ProjectDetailsScreen> {
   void dispose() {
     _viewModel.dispose();
     super.dispose();
+  }
+
+  Widget _buildPlatformsCol(BuildContext context, Project project) {
+    final List<PlatformRecord> platforms = List.empty(growable: true);
+    platforms.add(PlatformRecord(platform: project.primaryPlatform, url: project.primaryUrl));
+
+    if (project.secondaryPlatforms != null && project.secondaryPlatforms!.isNotEmpty) {
+      platforms.addAll(project.secondaryPlatforms!);
+    }
+
+    return Column(
+      children: platforms.map((p) => PlatformAnchor(platform: p.platform, href: p.url)).toList(),
+    );
   }
 
   // TODO: All null coalescing operators should be replaced with non-null assertion before pushing to prod
@@ -88,7 +103,7 @@ class _ProjectDetailsScreenState extends State<ProjectDetailsScreen> {
             children: project.features.map((feat) => FeatureChip(feature: feat)).toList(),
           ),
         ),
-        // TODO: Add platforms here <
+        DetailCard.row(label: context.dict.projDetailsLabelPlatforms, child: _buildPlatformsCol(context, project)),
       ],
     ),
   );
@@ -103,10 +118,6 @@ class _ProjectDetailsScreenState extends State<ProjectDetailsScreen> {
         ProjectCoverCard(coverImagePath: _viewModel.project!.coverImagePath!),
         ProjectCoverAppBar(projectName: _viewModel.project!.name, authorHandle: _viewModel.project!.creator.username),
         SliverToBoxAdapter(child: _buildDetailsColumn(context, _viewModel.project!)),
-        const SliverToBoxAdapter(child: SizedBox(width: 480, height: 1800)),
-        SliverToBoxAdapter(
-          child: Container(color: const Color(0xFFFF0000), width: double.infinity, height: 64),
-        ),
       ],
     ),
   };
