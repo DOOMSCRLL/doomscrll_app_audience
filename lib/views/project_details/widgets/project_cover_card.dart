@@ -6,7 +6,7 @@ import "package:flutter/material.dart";
 
 class ProjectCoverCard extends StatelessWidget {
   final String coverImagePath;
-  const new({super.key, String? coverImagePath}) : coverImagePath = coverImagePath ?? "MISSING_DEFAULT_COVER_IMG_PATH";
+  const new({super.key, required this.coverImagePath});
 
   @override
   Widget build(BuildContext context) {
