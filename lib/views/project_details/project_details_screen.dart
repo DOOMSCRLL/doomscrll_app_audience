@@ -62,7 +62,8 @@ class _ProjectDetailsScreenState extends State<ProjectDetailsScreen> {
     child: Column(
       spacing: 36,
       children: [
-        Text(project.description!, style: Theme.of(context).textTheme.bodyLarge),
+        if (project.description != null && project.description!.isNotEmpty)
+          Text(project.description!, style: Theme.of(context).textTheme.bodyLarge),
         if (project.videoUrl != null && project.videoUrl!.isNotEmpty)
           DetailCard.column(
             label: context.dict.projDetailsLabelTrailer,
@@ -115,7 +116,7 @@ class _ProjectDetailsScreenState extends State<ProjectDetailsScreen> {
     ),
     _ => CustomScrollView(
       slivers: [
-        ProjectCoverCard(coverImagePath: _viewModel.project!.coverImagePath!),
+        ProjectCoverCard(coverImagePath: _viewModel.project!.coverImagePath ?? ""),
         ProjectCoverAppBar(projectName: _viewModel.project!.name, authorHandle: _viewModel.project!.creator.username),
         SliverToBoxAdapter(child: _buildDetailsColumn(context, _viewModel.project!)),
       ],
