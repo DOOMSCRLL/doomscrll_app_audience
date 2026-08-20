@@ -8,9 +8,7 @@ class ProjectCoverAppBar extends StatelessWidget {
   final String authorHandle;
   final VoidCallback? onBackPressed;
 
-  const ProjectCoverAppBar({super.key, String? projectName, String? authorHandle, this.onBackPressed})
-    : projectName = projectName ?? "MISSING_DEFAULT_PROJECT_NAME",
-      authorHandle = authorHandle ?? "MISSING_DEFAULT_AUTHOR_HANDLE";
+  const ProjectCoverAppBar({super.key, required this.projectName, required this.authorHandle, this.onBackPressed});
 
   @override
   Widget build(BuildContext context) {
