@@ -40,7 +40,6 @@ dependencies:
   flutter_localizations:
     sdk: flutter
   intl: any
-  wakelock_plus: ^1.2.8
   url_launcher: ^6.3.0
   youtube_player_iframe: ^5.2.1
 
@@ -54,6 +53,7 @@ dev_dependencies:
   # package. See that file for information about deactivating specific lint
   # rules and activating additional ones.
   flutter_lints: ^6.0.0
+  flutter_launcher_icons: ^0.14.4
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
