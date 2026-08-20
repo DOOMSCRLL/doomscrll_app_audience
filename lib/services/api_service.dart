@@ -1,14 +1,11 @@
 import "dart:convert";
 
-import "package:flutter/foundation.dart";
 import "package:http/http.dart" as http;
 
 class ApiService {
   static const String _productionBaseUrl = "https://api.doomscrll.com";
-  static const String _localBaseUrl = "http://127.0.0.1:3000";
 
-  static String get defaultBaseUrl =>
-      kDebugMode ? _localBaseUrl : _productionBaseUrl;
+  static String get defaultBaseUrl => _productionBaseUrl;
 
   final String baseUrl;
   final http.Client _client;
