@@ -57,17 +57,17 @@ class _ProjectDetailsScreenState extends State<ProjectDetailsScreen> {
     );
   }
 
-  // TODO: All null coalescing operators should be replaced with non-null assertion before pushing to prod
   Widget _buildDetailsColumn(BuildContext context, Project project) => Padding(
     padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 24),
     child: Column(
       spacing: 36,
       children: [
         Text(project.description!, style: Theme.of(context).textTheme.bodyLarge),
-        DetailCard.column(
-          label: context.dict.projDetailsLabelTrailer,
-          child: YoutubeFacadePlayer(url: project.videoUrl ?? "youtu.be/VUwkKl7IL1w"),
-        ),
+        if (project.videoUrl != null && project.videoUrl!.isNotEmpty)
+          DetailCard.column(
+            label: context.dict.projDetailsLabelTrailer,
+            child: YoutubeFacadePlayer(url: project.videoUrl!),
+          ),
         DetailCard.row(
           label: context.dict.projDetailsLabelCategory,
           child: Text(
@@ -103,7 +103,7 @@ class _ProjectDetailsScreenState extends State<ProjectDetailsScreen> {
             children: project.features.map((feat) => FeatureChip(feature: feat)).toList(),
           ),
         ),
-        DetailCard.row(label: context.dict.projDetailsLabelPlatforms, child: _buildPlatformsCol(context, project)),
+        DetailCard.column(label: context.dict.projDetailsLabelPlatforms, child: _buildPlatformsCol(context, project)),
       ],
     ),
   );
