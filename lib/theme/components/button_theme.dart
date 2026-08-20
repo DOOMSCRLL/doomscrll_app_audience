@@ -1,11 +1,11 @@
-import "package:flutter/material.dart";
-
 import "package:doomscrll_app_audience/theme/app_colors.dart";
+import "package:flutter/material.dart";
 
 abstract final class DoomscrllButtonTheme {
   static const TextStyle _buttonTextStyle = TextStyle(
     fontFamily: "SpaceMono",
     fontWeight: FontWeight.w700,
+    fontSize: 20,
     letterSpacing: 1.2,
   );
 
@@ -14,12 +14,8 @@ abstract final class DoomscrllButtonTheme {
       style: ButtonStyle(
         textStyle: const WidgetStatePropertyAll(_buttonTextStyle),
         minimumSize: const WidgetStatePropertyAll(Size(0, 48)),
-        padding: const WidgetStatePropertyAll(
-          EdgeInsets.symmetric(horizontal: 24, vertical: 12),
-        ),
-        shape: WidgetStatePropertyAll(
-          RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
-        ),
+        padding: const WidgetStatePropertyAll(EdgeInsets.symmetric(horizontal: 24)),
+        shape: WidgetStatePropertyAll(RoundedRectangleBorder(borderRadius: BorderRadius.circular(16))),
         backgroundColor: WidgetStateProperty.resolveWith((states) {
           if (states.contains(WidgetState.disabled)) {
             return AppColors.lagoon.withValues(alpha: 0.2);
@@ -44,12 +40,8 @@ abstract final class DoomscrllButtonTheme {
       style: ButtonStyle(
         textStyle: const WidgetStatePropertyAll(_buttonTextStyle),
         minimumSize: const WidgetStatePropertyAll(Size(0, 48)),
-        padding: const WidgetStatePropertyAll(
-          EdgeInsets.symmetric(horizontal: 24, vertical: 12),
-        ),
-        shape: WidgetStatePropertyAll(
-          RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
-        ),
+        padding: const WidgetStatePropertyAll(EdgeInsets.symmetric(horizontal: 24, vertical: 12)),
+        shape: WidgetStatePropertyAll(RoundedRectangleBorder(borderRadius: BorderRadius.circular(16))),
         backgroundColor: WidgetStateProperty.resolveWith((states) {
           if (states.contains(WidgetState.pressed)) {
             return AppColors.bloodmoon;
@@ -83,12 +75,8 @@ abstract final class DoomscrllButtonTheme {
       style: ButtonStyle(
         textStyle: const WidgetStatePropertyAll(_buttonTextStyle),
         minimumSize: const WidgetStatePropertyAll(Size(0, 48)),
-        padding: const WidgetStatePropertyAll(
-          EdgeInsets.symmetric(horizontal: 24, vertical: 12),
-        ),
-        shape: WidgetStatePropertyAll(
-          RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
-        ),
+        padding: const WidgetStatePropertyAll(EdgeInsets.symmetric(horizontal: 24, vertical: 12)),
+        shape: WidgetStatePropertyAll(RoundedRectangleBorder(borderRadius: BorderRadius.circular(16))),
         backgroundColor: WidgetStateProperty.resolveWith((states) {
           if (states.contains(WidgetState.pressed)) {
             return AppColors.bloodmoon;
