@@ -25,6 +25,7 @@ class _DoomscrllRefreshIndicatorState extends State<DoomscrllRefreshIndicator> {
 
   void _handleScrollNotification(ScrollNotification notification) {
     if (_isRefreshing) return;
+    if (notification.metrics.axis != Axis.vertical) return;
 
     if (notification is OverscrollNotification && notification.overscroll < 0) {
       setState(() {
