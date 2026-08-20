@@ -28,6 +28,24 @@ class AppLocalizationsTr extends AppLocalizations {
   String get feedCopyNoProjects => 'Görünüşe göre burada hiç proje yok!';
 
   @override
+  String get projDetailsLabelTrailer => 'Tanıtım';
+
+  @override
+  String get projDetailsLabelCategory => 'Kategori';
+
+  @override
+  String get projDetailsLabelTags => 'Etiketler';
+
+  @override
+  String get projDetailsLabelScreenshots => 'Ekran Görüntüleri';
+
+  @override
+  String get projDetailsLabelFeatures => 'Özellikler';
+
+  @override
+  String get projDetailsLabelPlatforms => 'Platformlar';
+
+  @override
   String get contextMenuLabelContactUs => 'Bize ulaşın';
 
   @override

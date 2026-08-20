@@ -28,6 +28,24 @@ class AppLocalizationsEn extends AppLocalizations {
   String get feedCopyNoProjects => 'It seems that there are no projects here!';
 
   @override
+  String get projDetailsLabelTrailer => 'Trailer';
+
+  @override
+  String get projDetailsLabelCategory => 'Category';
+
+  @override
+  String get projDetailsLabelTags => 'Tags';
+
+  @override
+  String get projDetailsLabelScreenshots => 'Screenshots';
+
+  @override
+  String get projDetailsLabelFeatures => 'Features';
+
+  @override
+  String get projDetailsLabelPlatforms => 'Platforms';
+
+  @override
   String get contextMenuLabelContactUs => 'Contact us';
 
   @override

@@ -128,6 +128,42 @@ abstract class AppLocalizations {
   /// **'It seems that there are no projects here!'**
   String get feedCopyNoProjects;
 
+  /// No description provided for @projDetailsLabelTrailer.
+  ///
+  /// In en, this message translates to:
+  /// **'Trailer'**
+  String get projDetailsLabelTrailer;
+
+  /// No description provided for @projDetailsLabelCategory.
+  ///
+  /// In en, this message translates to:
+  /// **'Category'**
+  String get projDetailsLabelCategory;
+
+  /// No description provided for @projDetailsLabelTags.
+  ///
+  /// In en, this message translates to:
+  /// **'Tags'**
+  String get projDetailsLabelTags;
+
+  /// No description provided for @projDetailsLabelScreenshots.
+  ///
+  /// In en, this message translates to:
+  /// **'Screenshots'**
+  String get projDetailsLabelScreenshots;
+
+  /// No description provided for @projDetailsLabelFeatures.
+  ///
+  /// In en, this message translates to:
+  /// **'Features'**
+  String get projDetailsLabelFeatures;
+
+  /// No description provided for @projDetailsLabelPlatforms.
+  ///
+  /// In en, this message translates to:
+  /// **'Platforms'**
+  String get projDetailsLabelPlatforms;
+
   /// No description provided for @contextMenuLabelContactUs.
   ///
   /// In en, this message translates to:
